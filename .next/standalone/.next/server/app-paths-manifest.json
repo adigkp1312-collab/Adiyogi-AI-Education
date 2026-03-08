@@ -4,5 +4,6 @@
   "/api/generate-plan/route": "app/api/generate-plan/route.js",
   "/api/progress/route": "app/api/progress/route.js",
   "/api/voice/tts/route": "app/api/voice/tts/route.js",
-  "/api/webhook/telegram/route": "app/api/webhook/telegram/route.js"
+  "/api/webhook/telegram/route": "app/api/webhook/telegram/route.js",
+  "/page": "app/page.js"
 }
