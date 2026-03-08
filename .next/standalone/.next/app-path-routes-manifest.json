@@ -1,0 +1,8 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/generate-plan/route": "/api/generate-plan",
+  "/api/progress/route": "/api/progress",
+  "/api/voice/tts/route": "/api/voice/tts",
+  "/api/webhook/telegram/route": "/api/webhook/telegram"
+}

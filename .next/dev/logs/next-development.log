@@ -1,0 +1,5005 @@
+[00:00:00.885] Server  LOG     ✓ Ready in 696ms
+[00:01:43.745] Server  WARN    ⚠ Cross origin request detected from adityas-mac-mini.local to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:01:43.789] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:52.526] Browser ERROR   Microphone access denied: {}
+[00:02:06.762] Server  ERROR   Course generation error: UnrecognizedClientException: The security token included in the request is invalid.
+[00:16:04.435] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:16:18.429] Server  LOG     ✓ Compiled in 55ms
+[00:16:19.066] Server  LOG     ✓ Compiled in 32ms
+[00:16:40.410] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:24.222] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.223] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.224] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.225] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.225] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.225] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.226] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.226] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.227] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.228] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.228] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.229] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.229] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.229] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.230] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.230] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.231] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.231] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.232] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.232] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.232] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.232] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.233] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.233] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.234] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.234] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.235] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.235] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.235] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.236] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.236] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.236] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.237] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.237] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.238] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.238] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.238] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.239] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.239] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.239] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.240] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.240] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.241] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.241] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.241] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.241] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.241] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.242] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.242] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.243] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.243] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.244] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.244] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.244] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.244] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.245] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:17:24.254] Server  LOG     ✓ Compiled in 50ms
+[00:17:24.379] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:17:24.379] Browser ERROR   ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:17:25.223] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:17:25.223] Browser ERROR   ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:17:58.721] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:17:58.722] Browser ERROR   ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:17:59.241] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:17:59.241] Browser ERROR   ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:18.224] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:18.224] Browser ERROR   ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:19.225] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:19.225] Browser ERROR   ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:31.142] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.143] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.145] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.146] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.146] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.147] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.147] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.147] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.149] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.151] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.152] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.153] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.154] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.154] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.154] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.155] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.156] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.157] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.158] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.159] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.160] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.160] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.160] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.160] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.162] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.163] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.164] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.164] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.165] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.165] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.165] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.165] Server  ERROR   ⨯ ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:31.595] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:31.595] Browser ERROR   ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:32.276] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:32.276] Browser ERROR   ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:41.919] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:41.919] Browser ERROR   ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:42.281] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:42.281] Browser ERROR   ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:48.946] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:48.946] Browser ERROR   ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:49.266] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:49.266] Browser ERROR   ./src/components/ui/Header.tsx:4:1
+Module not found: Can't resolve '@/types/course'
+  2 |
+  3 | import { useCourseStore } from '@/lib/store/course-store';
+> 4 | import { LANGUAGE_NAMES, SupportedLanguage } from '@/types/course';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export function Header() {
+  7 |   const { language, setLanguage } = useCourseStore();
+
+Import map: aliased to relative './src/types/course' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/components/ui/Header.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/ui/Header.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:58.433] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.435] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.436] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.437] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.439] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.440] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.441] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.443] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.445] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.446] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.446] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.447] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.448] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.449] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.450] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.451] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.452] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.453] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.453] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.454] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.455] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.456] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.457] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.457] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.459] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.459] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.460] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.460] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.468] Server  LOG     ✓ Compiled in 23ms
+[00:18:58.517] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.518] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.519] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.520] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.521] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.522] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.523] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.524] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.524] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.525] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.526] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.526] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.527] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.527] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.528] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.529] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.529] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.530] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.530] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.531] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.531] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.532] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.533] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.533] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.534] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.534] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.535] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.535] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:18:58.554] Server  LOG     ✓ Compiled in 17ms
+[00:18:59.222] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:59.222] Browser ERROR   ./src/app/page.tsx:4:1
+Export Header doesn't exist in target module
+  2 |
+  3 | import { useState } from "react";
+> 4 | import { Header } from "@/components/ui/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+
+The export Header was not found in module [project]/src/components/ui/Header.tsx [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[00:18:59.222] Browser ERROR   ./src/app/page.tsx:4:1
+Export Header doesn't exist in target module
+  2 |
+  3 | import { useState } from "react";
+> 4 | import { Header } from "@/components/ui/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+
+The export Header was not found in module [project]/src/components/ui/Header.tsx [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[00:18:59.222] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:59.223] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:18:59.223] Browser ERROR   ./src/app/page.tsx:4:1
+Export Header doesn't exist in target module
+  2 |
+  3 | import { useState } from "react";
+> 4 | import { Header } from "@/components/ui/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+
+The export Header was not found in module [project]/src/components/ui/Header.tsx [app-client] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[00:18:59.223] Browser ERROR   ./src/app/page.tsx:4:1
+Export Header doesn't exist in target module
+  2 |
+  3 | import { useState } from "react";
+> 4 | import { Header } from "@/components/ui/Header";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+
+The export Header was not found in module [project]/src/components/ui/Header.tsx [app-ssr] (ecmascript).
+The module has no exports at all.
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[00:18:59.223] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:20:27.647] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:27.812] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:20:28.072] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:20:28.072] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:20:28.442] Browser ERROR   uncaughtError: Error: ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:28.664] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:20:28.664] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:20:29.229] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:20:29.229] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:20:29.229] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:20:29.229] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:20:29.229] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:20:32.041] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:32.229] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:20:32.396] Browser ERROR   uncaughtError: Error: ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:20:32.545] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:20:32.545] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:20:33.220] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:33:30.299] Server  ERROR   ⨯ ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:33:30.772] Browser ERROR   uncaughtError: Error: ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:33:30.953] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:33:30.953] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:36:58.215] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:01.216] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:05.215] Browser ERROR   ./src/app/page.tsx:5:1
+Module not found: Can't resolve '@/components/voice/VoiceRecorder'
+  3 | import { useState } from "react";
+  4 | import { Header } from "@/components/ui/Header";
+> 5 | import { VoiceRecorder } from "@/components/voice/VoiceRecorder";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { CourseOutline } from "@/components/course/CourseOutline";
+  7 | import { GeneratingAnimation } from "@/components/ui/Loading";
+  8 | import { useCourseStore } from "@/lib/store/course-store";
+
+Import map: aliased to relative './src/components/voice/VoiceRecorder' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:37:07.843] Server  LOG     ✓ Compiled in 28ms
+[00:37:09.857] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:13:10.706] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:16:00.615] Server  LOG     ✓ Compiled in 24ms
+[01:31:33.002] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:34:19.825] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:34:54.040] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:56:48.653] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
