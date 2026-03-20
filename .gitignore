@@ -1,3 +1,21 @@
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Environment
+.env
+.env.local
+.env*.local
+
 # Local Netlify folder
 .netlify
 education-app/
+
+# Debug
+npm-debug.log*
+
+# OS
+.DS_Store
