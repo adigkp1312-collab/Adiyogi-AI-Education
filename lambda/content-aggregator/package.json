@@ -1,0 +1,8 @@
+{
+  "name": "adiyogi-content-aggregator",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "googleapis": "^130.0.0"
+  }
+}

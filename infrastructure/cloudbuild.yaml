@@ -1,0 +1,156 @@
+# Cloud Build CI/CD pipeline for Adiyogi services
+# Trigger: Push to main branch or manual trigger
+#
+# Setup:
+#   gcloud builds triggers create github \
+#     --repo-name=Adiyogi-AI-Education \
+#     --repo-owner=<GITHUB_USER> \
+#     --branch-pattern="^main$" \
+#     --build-config=infrastructure/cloudbuild.yaml
+
+substitutions:
+  _REGION: asia-south1
+  _REPO: adiyogi
+
+steps:
+  # --- Build & Deploy: Interviewer Service ---
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '--build-arg=SERVICE=interviewer'
+      - '-t'
+      - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/adiyogi-interviewer:latest'
+      - '-f'
+      - 'services/Dockerfile'
+      - '.'
+    id: 'build-interviewer'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/adiyogi-interviewer:latest']
+    id: 'push-interviewer'
+    waitFor: ['build-interviewer']
+
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'adiyogi-interviewer'
+      - '--image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/adiyogi-interviewer:latest'
+      - '--region=${_REGION}'
+      - '--platform=managed'
+      - '--port=8080'
+      - '--memory=512Mi'
+      - '--allow-unauthenticated'
+      - '--quiet'
+    id: 'deploy-interviewer'
+    waitFor: ['push-interviewer']
+
+  # --- Build & Deploy: Question Bank Service ---
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '--build-arg=SERVICE=question-bank'
+      - '-t'
+      - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/adiyogi-question-bank:latest'
+      - '-f'
+      - 'services/Dockerfile'
+      - '.'
+    id: 'build-question-bank'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/adiyogi-question-bank:latest']
+    id: 'push-question-bank'
+    waitFor: ['build-question-bank']
+
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'adiyogi-question-bank'
+      - '--image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/adiyogi-question-bank:latest'
+      - '--region=${_REGION}'
+      - '--platform=managed'
+      - '--port=8080'
+      - '--memory=512Mi'
+      - '--allow-unauthenticated'
+      - '--quiet'
+    id: 'deploy-question-bank'
+    waitFor: ['push-question-bank']
+
+  # --- Build & Deploy: Curator Service ---
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '--build-arg=SERVICE=curator'
+      - '-t'
+      - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/adiyogi-curator:latest'
+      - '-f'
+      - 'services/Dockerfile'
+      - '.'
+    id: 'build-curator'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/adiyogi-curator:latest']
+    id: 'push-curator'
+    waitFor: ['build-curator']
+
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'adiyogi-curator'
+      - '--image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/adiyogi-curator:latest'
+      - '--region=${_REGION}'
+      - '--platform=managed'
+      - '--port=8080'
+      - '--memory=512Mi'
+      - '--allow-unauthenticated'
+      - '--quiet'
+    id: 'deploy-curator'
+    waitFor: ['push-curator']
+
+  # --- Build & Deploy: Evaluation Service ---
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '--build-arg=SERVICE=evaluation'
+      - '-t'
+      - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/adiyogi-evaluation:latest'
+      - '-f'
+      - 'services/Dockerfile'
+      - '.'
+    id: 'build-evaluation'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/adiyogi-evaluation:latest']
+    id: 'push-evaluation'
+    waitFor: ['build-evaluation']
+
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'adiyogi-evaluation'
+      - '--image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/adiyogi-evaluation:latest'
+      - '--region=${_REGION}'
+      - '--platform=managed'
+      - '--port=8080'
+      - '--memory=512Mi'
+      - '--allow-unauthenticated'
+      - '--quiet'
+    id: 'deploy-evaluation'
+    waitFor: ['push-evaluation']
+
+images:
+  - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/adiyogi-interviewer:latest'
+  - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/adiyogi-question-bank:latest'
+  - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/adiyogi-curator:latest'
+  - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/adiyogi-evaluation:latest'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+timeout: '1200s'
