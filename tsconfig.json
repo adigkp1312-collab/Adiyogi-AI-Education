@@ -42,7 +42,11 @@
   },
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "services",
+    "lambda",
+    "infrastructure",
+    "frontend"
   ],
   "include": [
     "next-env.d.ts",
