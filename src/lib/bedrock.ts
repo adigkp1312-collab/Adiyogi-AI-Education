@@ -4,14 +4,22 @@ import {
 } from "@aws-sdk/client-bedrock-runtime";
 import type { CoursePlan, CourseWeek, SupportedLanguage } from "@/types";
 import { v4 as uuidv4 } from "uuid";
+import { getAwsCredentials, getAwsRegion } from "@/lib/api-utils";
 
-const client = new BedrockRuntimeClient({
-  region: process.env.AWS_REGION || "ap-south-1",
-  credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID!,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY!,
-  },
-});
+let _client: BedrockRuntimeClient | null = null;
+
+function getClient(): BedrockRuntimeClient {
+  if (_client) return _client;
+  const credentials = getAwsCredentials();
+  if (!credentials) {
+    throw new Error("AWS credentials not configured. Set AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.");
+  }
+  _client = new BedrockRuntimeClient({
+    region: getAwsRegion(),
+    credentials,
+  });
+  return _client;
+}
 
 const LANGUAGE_NAMES: Record<SupportedLanguage, string> = {
   en: "English",
@@ -29,6 +37,8 @@ const LANGUAGE_NAMES: Record<SupportedLanguage, string> = {
   ur: "Urdu",
 };
 
+const MAX_WEEKS = 12;
+
 export async function generateCoursePlan(
   topic: string,
   language: SupportedLanguage = "en",
@@ -36,9 +46,17 @@ export async function generateCoursePlan(
   weeks: number = 4
 ): Promise<CoursePlan> {
   const langName = LANGUAGE_NAMES[language] || "English";
+  const safeWeeks = Math.max(1, Math.min(MAX_WEEKS, weeks));
 
-  const prompt = `You are Adiyogi AI, an educational course planner. Create a structured ${weeks}-week learning plan for the topic: "${topic}"
+  // Sanitize topic to prevent prompt injection — strip control characters and limit length
+  const safeTopic = topic
+    .replace(/[\x00-\x1F\x7F]/g, "")
+    .slice(0, 200)
+    .trim();
 
+  const prompt = `You are Adiyogi AI, an educational course planner. Create a structured ${safeWeeks}-week learning plan.
+
+Topic: ${safeTopic}
 Skill level: ${skillLevel}
 Preferred language for content: ${langName}
 
@@ -76,6 +94,7 @@ Guidelines:
     temperature: 0.7,
   });
 
+  const client = getClient();
   const command = new InvokeModelCommand({
     modelId,
     contentType: "application/json",
@@ -84,7 +103,17 @@ Guidelines:
   });
 
   const response = await client.send(command);
+
+  if (!response.body) {
+    throw new Error("Empty response from Bedrock");
+  }
+
   const responseBody = JSON.parse(new TextDecoder().decode(response.body));
+
+  if (!responseBody.content?.[0]?.text) {
+    throw new Error("Unexpected response format from Bedrock");
+  }
+
   const content = responseBody.content[0].text;
 
   // Extract JSON from the response
@@ -95,26 +124,30 @@ Guidelines:
 
   const parsed = JSON.parse(jsonMatch[0]);
 
+  if (!Array.isArray(parsed.weeks)) {
+    throw new Error("Invalid course plan structure: missing weeks array");
+  }
+
   const coursePlan: CoursePlan = {
     id: uuidv4(),
-    topic,
+    topic: safeTopic,
     language,
     skill_level: skillLevel,
-    totalWeeks: weeks,
-    title: topic,
-    description: `A ${weeks}-week course on ${topic}`,
-    estimated_duration: `${weeks * 5} hours`,
+    totalWeeks: safeWeeks,
+    title: safeTopic,
+    description: `A ${safeWeeks}-week course on ${safeTopic}`,
+    estimated_duration: `${safeWeeks * 5} hours`,
     modules: [],
     tips: [],
-    weeks: parsed.weeks.map((w: any): CourseWeek => ({
-      weekNumber: w.weekNumber,
-      title: w.title,
-      description: w.description,
-      topics: w.topics,
+    weeks: parsed.weeks.map((w: Record<string, unknown>): CourseWeek => ({
+      weekNumber: Number(w.weekNumber) || 1,
+      title: String(w.title || ""),
+      description: String(w.description || ""),
+      topics: Array.isArray(w.topics) ? w.topics.map(String) : [],
       resources: [],
     })),
     createdAt: new Date().toISOString(),
   };
 
-  return coursePlan as CoursePlan;
+  return coursePlan;
 }

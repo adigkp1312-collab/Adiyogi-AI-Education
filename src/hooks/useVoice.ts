@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react'
+import { useState, useRef, useCallback, useEffect } from 'react'
 
 interface SpeechRecognitionEvent {
   results: { [index: number]: { [index: number]: { transcript: string } } }
@@ -29,6 +29,25 @@ function createRecognition(
 export function useVoice(onTranscript: (text: string) => void) {
   const [isRecording, setIsRecording] = useState(false)
   const recognitionRef = useRef<SpeechRecognitionInstance | null>(null)
+  const onTranscriptRef = useRef(onTranscript)
+
+  // Keep ref in sync to avoid stale closures
+  useEffect(() => {
+    onTranscriptRef.current = onTranscript
+  }, [onTranscript])
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (recognitionRef.current) {
+        recognitionRef.current.onresult = null
+        recognitionRef.current.onend = null
+        recognitionRef.current.onerror = null
+        try { recognitionRef.current.stop() } catch { /* already stopped */ }
+        recognitionRef.current = null
+      }
+    }
+  }, [])
 
   const toggleRecording = useCallback(async (languageCode: string) => {
     if (isRecording) {
@@ -49,9 +68,11 @@ export function useVoice(onTranscript: (text: string) => void) {
     recognitionRef.current = recognition
 
     recognition.onresult = (event: SpeechRecognitionEvent) => {
-      const transcript = event.results[0][0].transcript
-      if (transcript.trim()) {
-        onTranscript(transcript)
+      if (event.results?.[0]?.[0]?.transcript) {
+        const transcript = event.results[0][0].transcript
+        if (transcript.trim()) {
+          onTranscriptRef.current(transcript)
+        }
       }
     }
 
@@ -60,13 +81,13 @@ export function useVoice(onTranscript: (text: string) => void) {
 
     recognition.start()
     setIsRecording(true)
-  }, [isRecording, onTranscript])
+  }, [isRecording])
 
   return { isRecording, toggleRecording }
 }
 
 export function speak(text: string, lang: string = 'en-IN') {
-  if (!window.speechSynthesis) return
+  if (typeof window === 'undefined' || !window.speechSynthesis) return
   window.speechSynthesis.cancel()
   const utterance = new SpeechSynthesisUtterance(text)
   utterance.lang = lang === 'hi-IN' ? 'hi-IN' : 'en-IN'
@@ -75,5 +96,7 @@ export function speak(text: string, lang: string = 'en-IN') {
 }
 
 export function stopSpeaking() {
-  window.speechSynthesis?.cancel()
+  if (typeof window !== 'undefined') {
+    window.speechSynthesis?.cancel()
+  }
 }

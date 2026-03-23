@@ -1,6 +1,12 @@
 import type { ContentResource } from "@/types";
 
 const YOUTUBE_API_BASE = "https://www.googleapis.com/youtube/v3";
+const MAX_RESULTS_LIMIT = 25;
+
+// Simple in-memory cache for YouTube results
+const searchCache = new Map<string, { data: ContentResource[]; expiresAt: number }>();
+const CACHE_TTL_MS = 10 * 60 * 1000; // 10 minutes
+const CACHE_MAX_SIZE = 1000;
 
 interface YouTubeSearchResult {
   id: { videoId: string };
@@ -39,6 +45,16 @@ export async function searchYouTube(
   const apiKey = process.env.YOUTUBE_API_KEY;
   if (!apiKey) throw new Error("YouTube API key not configured");
 
+  // Bound maxResults
+  const boundedMax = Math.max(1, Math.min(MAX_RESULTS_LIMIT, maxResults));
+
+  // Check cache
+  const cacheKey = `${query}:${language}:${boundedMax}`;
+  const cached = searchCache.get(cacheKey);
+  if (cached && Date.now() < cached.expiresAt) {
+    return cached.data;
+  }
+
   const relevanceLanguage = language === "en" ? "en" : language;
 
   // Search for videos
@@ -46,7 +62,7 @@ export async function searchYouTube(
   searchUrl.searchParams.set("part", "snippet");
   searchUrl.searchParams.set("q", `${query} tutorial lecture`);
   searchUrl.searchParams.set("type", "video");
-  searchUrl.searchParams.set("maxResults", String(maxResults));
+  searchUrl.searchParams.set("maxResults", String(boundedMax));
   searchUrl.searchParams.set("relevanceLanguage", relevanceLanguage);
   searchUrl.searchParams.set("videoDuration", "medium");
   searchUrl.searchParams.set("videoEmbeddable", "true");
@@ -71,27 +87,56 @@ export async function searchYouTube(
   detailsUrl.searchParams.set("key", apiKey);
 
   const detailsRes = await fetch(detailsUrl.toString());
+  if (!detailsRes.ok) {
+    // Return search results without details rather than failing
+    return items.map((item): ContentResource => ({
+      id: item.id.videoId,
+      title: item.snippet.title,
+      source: "youtube",
+      type: "video",
+      url: `https://www.youtube.com/watch?v=${item.id.videoId}`,
+      thumbnail: item.snippet.thumbnails?.medium?.url,
+    }));
+  }
+
   const detailsData = await detailsRes.json();
   const details: YouTubeVideoDetails[] = detailsData.items || [];
 
   const detailsMap = new Map(details.map((d) => [d.id, d]));
 
-  return items.map((item): ContentResource => {
+  const results = items.map((item): ContentResource => {
     const detail = detailsMap.get(item.id.videoId);
+    const likeCount = detail ? parseInt(detail.statistics.likeCount || "0") : 0;
     return {
       id: item.id.videoId,
       title: item.snippet.title,
       source: "youtube",
       type: "video",
       url: `https://www.youtube.com/watch?v=${item.id.videoId}`,
-      thumbnail: item.snippet.thumbnails.medium.url,
+      thumbnail: item.snippet.thumbnails?.medium?.url,
       duration: detail ? parseDuration(detail.contentDetails.duration) : undefined,
-      viewCount: detail ? parseInt(detail.statistics.viewCount) : undefined,
-      rating: detail
-        ? Math.min(5, parseInt(detail.statistics.likeCount || "0") / 1000)
+      viewCount: detail ? parseInt(detail.statistics.viewCount) || 0 : undefined,
+      rating: detail && likeCount > 0
+        ? Math.min(5, likeCount / 1000)
         : undefined,
     };
   });
+
+  // Cache results — evict stale entries if cache is full
+  if (searchCache.size >= CACHE_MAX_SIZE) {
+    const now = Date.now();
+    for (const [key, val] of searchCache) {
+      if (now > val.expiresAt) searchCache.delete(key);
+    }
+    // If still full after evicting stale, delete oldest entry
+    if (searchCache.size >= CACHE_MAX_SIZE) {
+      const firstKey = searchCache.keys().next().value;
+      if (firstKey) searchCache.delete(firstKey);
+    }
+  }
+  searchCache.set(cacheKey, { data: results, expiresAt: Date.now() + CACHE_TTL_MS });
+
+  return results;
 }
 
 // Static NPTEL course metadata for common CS/engineering topics
@@ -106,19 +151,21 @@ const NPTEL_COURSES: ContentResource[] = [
   },
 ];
 
+// Keywords that map to each NPTEL course — only match if the course is relevant
+const NPTEL_KEYWORDS: Record<string, string[]> = {
+  "nptel-dsa": ["data structure", "algorithm", "sorting", "linked list", "binary tree", "graph", "dsa"],
+};
+
 export function searchNPTEL(query: string): ContentResource[] {
   const q = query.toLowerCase();
-  return NPTEL_COURSES.filter(
-    (c) =>
-      c.title.toLowerCase().includes(q) ||
-      q.includes("data structure") ||
-      q.includes("algorithm") ||
-      q.includes("machine learning") ||
-      q.includes("python") ||
-      q.includes("database") ||
-      q.includes("network") ||
-      q.includes("operating system") ||
-      q.includes("deep learning") ||
-      q.includes("web")
-  ).slice(0, 3);
+  return NPTEL_COURSES.filter((c) => {
+    // Direct title match
+    if (c.title.toLowerCase().includes(q) || q.includes(c.title.toLowerCase())) {
+      return true;
+    }
+    // Keyword match — course must have relevant keywords
+    if (!c.id) return false;
+    const keywords = NPTEL_KEYWORDS[c.id];
+    return keywords ? keywords.some((kw: string) => q.includes(kw)) : false;
+  }).slice(0, 3);
 }

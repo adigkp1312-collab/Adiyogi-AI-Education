@@ -13,6 +13,7 @@
 
 import type { StoredQuestion } from '../types/interview';
 import type { IndexedCourse } from '../types';
+import type { ProfileDocument } from '../types/profile';
 
 // --- Configuration ---
 
@@ -20,6 +21,7 @@ const GCP_PROJECT = process.env.GOOGLE_CLOUD_PROJECT || 'adiyogi-ai-education';
 const DATASTORE_LOCATION = process.env.VERTEX_DATASTORE_LOCATION || 'global';
 const QUESTION_DATASTORE_ID = process.env.VERTEX_QUESTION_DATASTORE_ID || '';
 const COURSE_DATASTORE_ID = process.env.VERTEX_COURSE_DATASTORE_ID || '';
+const PROFILE_DATASTORE_ID = process.env.VERTEX_PROFILE_DATASTORE_ID || '';
 
 function getAccessToken(): string {
   return process.env.GOOGLE_ACCESS_TOKEN || '';
@@ -233,4 +235,33 @@ export async function batchImportCourses(courses: IndexedCourse[]): Promise<numb
     if (ok) successCount++;
   }
   return successCount;
+}
+
+// --- Profile Datastore Operations ---
+
+export async function searchProfiles(
+  query: string,
+  filters?: { level?: string },
+  limit: number = 10,
+): Promise<ProfileDocument[]> {
+  const filter = filters?.level ? `level: "${filters.level}"` : undefined;
+  const result = await vertexSearch<ProfileDocument>(
+    PROFILE_DATASTORE_ID,
+    query,
+    limit,
+    filter,
+  );
+  return result.results;
+}
+
+export async function upsertProfileDocument(doc: ProfileDocument): Promise<boolean> {
+  return upsertDocument(
+    PROFILE_DATASTORE_ID,
+    doc.id,
+    doc as unknown as Record<string, unknown>,
+  );
+}
+
+export async function deleteProfileDocument(userId: string): Promise<boolean> {
+  return deleteDocument(PROFILE_DATASTORE_ID, userId);
 }

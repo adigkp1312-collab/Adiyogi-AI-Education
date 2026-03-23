@@ -8,7 +8,18 @@
  */
 
 import { v4 as uuidv4 } from 'uuid';
-import type { CourseJSON, CurriculumModule } from '../types';
+import type { CourseJSON } from '../types';
+
+// --- Constants ---
+
+const STALLED_THRESHOLD_DAYS = 14;
+const BEHIND_THRESHOLD_DAYS = 7;
+const LOW_QUIZ_THRESHOLD = 50;
+const HIGH_QUIZ_THRESHOLD = 90;
+const MIN_QUIZZES_FOR_ADAPTATION = 2;
+const FRUSTRATION_CHECK_IN_COUNT = 3;
+const FRUSTRATION_THRESHOLD = 2;
+const GOOD_QUIZ_SCORE_THRESHOLD = 80;
 
 // --- Evaluation Types ---
 
@@ -175,7 +186,7 @@ export class EvaluationEngine {
         {
           type: 'pace_adjust',
           oldValue: 'normal',
-          newValue: 'extended — deadlines pushed back',
+          newValue: 'extended \u2014 deadlines pushed back',
         },
       ]);
     }
@@ -184,49 +195,49 @@ export class EvaluationEngine {
     const completedWithQuiz = moduleEvaluations.filter(
       (m) => m.status === 'completed' && m.quizScore !== undefined,
     );
-    if (completedWithQuiz.length >= 2) {
+    if (completedWithQuiz.length >= MIN_QUIZZES_FOR_ADAPTATION) {
       const avgScore = completedWithQuiz.reduce(
         (sum, m) => sum + (m.quizScore || 0), 0,
       ) / completedWithQuiz.length;
 
-      if (avgScore < 50) {
-        return this.createAdaptation('quiz_score', `Average quiz score ${avgScore}% — adding remedial content`, [
+      if (avgScore < LOW_QUIZ_THRESHOLD) {
+        return this.createAdaptation('quiz_score', `Average quiz score ${Math.round(avgScore)}% \u2014 adding remedial content`, [
           {
             type: 'difficulty_adjust',
             oldValue: 'current',
-            newValue: 'easier — additional foundational content added',
+            newValue: 'easier \u2014 additional foundational content added',
           },
         ]);
       }
 
-      if (avgScore > 90) {
-        return this.createAdaptation('quiz_score', `Average quiz score ${avgScore}% — accelerating pace`, [
+      if (avgScore > HIGH_QUIZ_THRESHOLD) {
+        return this.createAdaptation('quiz_score', `Average quiz score ${Math.round(avgScore)}% \u2014 accelerating pace`, [
           {
             type: 'pace_adjust',
             oldValue: 'normal',
-            newValue: 'accelerated — skipping introductory content',
+            newValue: 'accelerated \u2014 skipping introductory content',
           },
         ]);
       }
     }
 
     // Check recent check-ins for frustration
-    const recentCheckIns = checkIns.slice(-3);
+    const recentCheckIns = checkIns.slice(-FRUSTRATION_CHECK_IN_COUNT);
     const frustratedCount = recentCheckIns.filter(
       (c) => c.mood === 'frustrated' || c.mood === 'struggling',
     ).length;
 
-    if (frustratedCount >= 2) {
+    if (frustratedCount >= FRUSTRATION_THRESHOLD) {
       return this.createAdaptation('check_in', 'User reported frustration in recent check-ins', [
         {
           type: 'difficulty_adjust',
           oldValue: 'current',
-          newValue: 'reduced — more guided examples added',
+          newValue: 'reduced \u2014 more guided examples added',
         },
         {
           type: 'pace_adjust',
           oldValue: 'normal',
-          newValue: 'slower — extra time allocated per module',
+          newValue: 'slower \u2014 extra time allocated per module',
         },
       ]);
     }
@@ -238,6 +249,11 @@ export class EvaluationEngine {
 
   private calculateProgress(evaluation: EvaluationData): ProgressMetrics {
     const { moduleEvaluations } = evaluation;
+
+    if (moduleEvaluations.length === 0) {
+      return { ...evaluation.overallProgress, lastActiveAt: new Date().toISOString() };
+    }
+
     const completed = moduleEvaluations.filter((m) => m.status === 'completed');
     const withQuiz = completed.filter((m) => m.quizScore !== undefined);
     const withConfidence = moduleEvaluations.filter((m) => m.selfRatedConfidence > 0);
@@ -245,18 +261,17 @@ export class EvaluationEngine {
     const totalTime = moduleEvaluations.reduce((sum, m) => sum + m.timeSpentMinutes, 0);
 
     const now = new Date();
-    const lastActive = new Date(evaluation.overallProgress.lastActiveAt);
-    const daysSinceActive = Math.floor(
-      (now.getTime() - lastActive.getTime()) / (1000 * 60 * 60 * 24),
-    );
+    const lastActiveStr = evaluation.overallProgress.lastActiveAt;
+    const lastActive = lastActiveStr ? new Date(lastActiveStr) : now;
+    const daysSinceActive = isNaN(lastActive.getTime())
+      ? 0
+      : Math.floor((now.getTime() - lastActive.getTime()) / (1000 * 60 * 60 * 24));
 
     let paceStatus: ProgressMetrics['paceStatus'] = 'on_track';
-    if (daysSinceActive > 14) paceStatus = 'stalled';
-    else if (daysSinceActive > 7) paceStatus = 'behind';
+    if (daysSinceActive > STALLED_THRESHOLD_DAYS) paceStatus = 'stalled';
+    else if (daysSinceActive > BEHIND_THRESHOLD_DAYS) paceStatus = 'behind';
 
-    const completionRate = moduleEvaluations.length > 0
-      ? (completed.length / moduleEvaluations.length) * 100
-      : 0;
+    const completionRate = (completed.length / moduleEvaluations.length) * 100;
 
     return {
       completedModules: completed.length,
@@ -271,8 +286,10 @@ export class EvaluationEngine {
           ) / 10
         : 0,
       totalTimeSpentMinutes: totalTime,
-      currentStreak: daysSinceActive <= 1 ? evaluation.overallProgress.currentStreak : 0,
-      longestStreak: evaluation.overallProgress.longestStreak,
+      currentStreak: daysSinceActive <= 1 ? evaluation.overallProgress.currentStreak + 1 : 0,
+      longestStreak: daysSinceActive <= 1
+        ? Math.max(evaluation.overallProgress.longestStreak, evaluation.overallProgress.currentStreak + 1)
+        : evaluation.overallProgress.longestStreak,
       lastActiveAt: now.toISOString(),
       paceStatus,
     };
@@ -290,7 +307,7 @@ export class EvaluationEngine {
       return 'Take a break and revisit the current module tomorrow. Consider reaching out in the community.';
     }
 
-    if (mood === 'great' && evaluation.overallProgress.averageQuizScore > 80) {
+    if (mood === 'great' && evaluation.overallProgress.averageQuizScore > GOOD_QUIZ_SCORE_THRESHOLD) {
       return 'You\'re doing excellent! Consider accelerating to the next module.';
     }
 

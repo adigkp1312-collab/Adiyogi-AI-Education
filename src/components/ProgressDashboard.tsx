@@ -9,18 +9,11 @@ interface ProgressDashboardProps {
   onStartModule?: (moduleNumber: number) => void;
 }
 
-const PACE_COLORS: Record<string, string> = {
-  ahead: "text-green-400",
-  on_track: "text-blue-400",
-  behind: "text-yellow-400",
-  stalled: "text-red-400",
-};
-
-const PACE_LABELS: Record<string, string> = {
-  ahead: "Ahead of schedule",
-  on_track: "On track",
-  behind: "Behind schedule",
-  stalled: "Inactive",
+const PACE_CONFIG: Record<string, { color: string; label: string }> = {
+  ahead: { color: "text-green-400", label: "Ahead of schedule" },
+  on_track: { color: "text-blue-400", label: "On track" },
+  behind: { color: "text-yellow-400", label: "Behind schedule" },
+  stalled: { color: "text-red-400", label: "Inactive" },
 };
 
 export default function ProgressDashboard({
@@ -29,8 +22,10 @@ export default function ProgressDashboard({
   adaptationHistory,
   onStartModule,
 }: ProgressDashboardProps) {
+  const paceConfig = PACE_CONFIG[progress.paceStatus] || PACE_CONFIG.on_track;
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-6" role="region" aria-label="Learning progress dashboard">
       {/* Overview Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <StatCard
@@ -41,7 +36,7 @@ export default function ProgressDashboard({
         />
         <StatCard
           label="Avg Score"
-          value={progress.averageQuizScore > 0 ? `${progress.averageQuizScore}%` : "—"}
+          value={progress.averageQuizScore > 0 ? `${progress.averageQuizScore}%` : "\u2014"}
           subtext="quiz average"
           color="text-blue-400"
         />
@@ -63,11 +58,18 @@ export default function ProgressDashboard({
       <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700">
         <div className="flex items-center justify-between mb-3">
           <h3 className="text-lg font-semibold text-white">Overall Progress</h3>
-          <span className={`text-sm font-medium ${PACE_COLORS[progress.paceStatus]}`}>
-            {PACE_LABELS[progress.paceStatus]}
+          <span className={`text-sm font-medium ${paceConfig.color}`} role="status">
+            {paceConfig.label}
           </span>
         </div>
-        <div className="w-full h-3 bg-slate-700 rounded-full overflow-hidden">
+        <div
+          className="w-full h-3 bg-slate-700 rounded-full overflow-hidden"
+          role="progressbar"
+          aria-valuenow={progress.completionRate}
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-label="Overall completion progress"
+        >
           <div
             className="h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full transition-all duration-700"
             style={{ width: `${progress.completionRate}%` }}
@@ -81,7 +83,7 @@ export default function ProgressDashboard({
       {/* Module List */}
       <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700">
         <h3 className="text-lg font-semibold text-white mb-4">Modules</h3>
-        <div className="space-y-3">
+        <div className="space-y-3" role="list" aria-label="Module list">
           {moduleEvaluations.map((mod) => (
             <ModuleRow
               key={mod.moduleNumber}
@@ -96,17 +98,20 @@ export default function ProgressDashboard({
       {adaptationHistory.length > 0 && (
         <div className="bg-slate-800/50 rounded-2xl p-6 border border-slate-700">
           <h3 className="text-lg font-semibold text-white mb-4">Course Adaptations</h3>
-          <div className="space-y-3">
+          <div className="space-y-3" role="list" aria-label="Adaptation history">
             {adaptationHistory.slice(-5).reverse().map((adaptation) => (
               <div
                 key={adaptation.id}
+                role="listitem"
                 className="flex items-start gap-3 p-3 bg-slate-900/50 rounded-xl"
               >
-                <span className="text-purple-400 mt-0.5">*</span>
+                <span className="text-purple-400 mt-0.5" aria-hidden="true">*</span>
                 <div>
                   <p className="text-sm text-white">{adaptation.description}</p>
                   <p className="text-xs text-slate-500 mt-1">
-                    {new Date(adaptation.timestamp).toLocaleDateString()}
+                    <time dateTime={adaptation.timestamp}>
+                      {new Date(adaptation.timestamp).toLocaleDateString()}
+                    </time>
                   </p>
                 </div>
               </div>
@@ -148,28 +153,30 @@ function ModuleRow({
   onStart?: (moduleNumber: number) => void;
 }) {
   const statusConfig = {
-    not_started: { icon: "○", color: "text-slate-500", bg: "bg-slate-700" },
-    in_progress: { icon: "◑", color: "text-blue-400", bg: "bg-blue-500/20" },
-    completed: { icon: "●", color: "text-green-400", bg: "bg-green-500/20" },
-    skipped: { icon: "—", color: "text-slate-600", bg: "bg-slate-800" },
+    not_started: { icon: "\u25cb", color: "text-slate-500", bg: "bg-slate-700", label: "Not started" },
+    in_progress: { icon: "\u25d1", color: "text-blue-400", bg: "bg-blue-500/20", label: "In progress" },
+    completed: { icon: "\u25cf", color: "text-green-400", bg: "bg-green-500/20", label: "Completed" },
+    skipped: { icon: "\u2014", color: "text-slate-600", bg: "bg-slate-800", label: "Skipped" },
   };
 
   const config = statusConfig[evaluation.status];
 
   return (
     <div
+      role="listitem"
       className={`flex items-center justify-between p-3 rounded-xl ${config.bg} transition-all`}
     >
       <div className="flex items-center gap-3">
-        <span className={`text-lg ${config.color}`}>{config.icon}</span>
+        <span className={`text-lg ${config.color}`} aria-hidden="true">{config.icon}</span>
         <div>
           <p className={`text-sm font-medium ${config.color}`}>
             Module {evaluation.moduleNumber}
+            <span className="sr-only"> - {config.label}</span>
           </p>
           {evaluation.timeSpentMinutes > 0 && (
             <p className="text-xs text-slate-500">
               {formatTime(evaluation.timeSpentMinutes)} spent
-              {evaluation.quizScore !== undefined && ` · Score: ${evaluation.quizScore}%`}
+              {evaluation.quizScore !== undefined && ` \u00b7 Score: ${evaluation.quizScore}%`}
             </p>
           )}
         </div>
@@ -179,13 +186,14 @@ function ModuleRow({
         <button
           onClick={() => onStart(evaluation.moduleNumber)}
           className="text-xs px-3 py-1.5 bg-purple-600 text-white rounded-lg hover:bg-purple-500 transition-colors"
+          aria-label={`Start module ${evaluation.moduleNumber}`}
         >
           Start
         </button>
       )}
 
       {evaluation.selfRatedConfidence > 0 && (
-        <div className="flex gap-0.5">
+        <div className="flex gap-0.5" aria-label={`Confidence: ${evaluation.selfRatedConfidence} out of 5`}>
           {[1, 2, 3, 4, 5].map((star) => (
             <span
               key={star}
@@ -194,8 +202,9 @@ function ModuleRow({
                   ? "text-yellow-400"
                   : "text-slate-700"
               }`}
+              aria-hidden="true"
             >
-              ★
+              \u2605
             </span>
           ))}
         </div>

@@ -1,26 +1,30 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { searchQuestions } from '@/services/vertexDatastore';
-import { getSeedQuestions, searchKnownCourses } from '@/services/webCrawler';
+import { getSeedQuestions } from '@/services/webCrawler';
 import type { StoredQuestion } from '@/types/interview';
+import { checkRateLimit, sanitizeText, apiError, safeError } from '@/lib/api-utils';
+
+const MAX_QUESTION_LIMIT = 50;
+const VALID_CATEGORIES = ['ai', 'ml', 'deep-learning', 'nlp', 'computer-vision', 'data-science', 'general'] as const;
 
 /**
  * GET /api/questions
  * Returns adaptive questions from the question bank.
- * Falls back to seed questions if Vertex Datastore is not configured.
- *
- * Query params:
- * - category: filter by category (background, goals, skills, preferences, availability)
- * - context: JSON-encoded previous answers for adaptive selection
- * - limit: max results (default 5)
  */
 export async function GET(request: NextRequest) {
+  const rateLimited = checkRateLimit(request);
+  if (rateLimited) return rateLimited;
+
   const { searchParams } = new URL(request.url);
-  const category = searchParams.get('category') || undefined;
-  const limit = parseInt(searchParams.get('limit') || '5', 10);
+  const rawCategory = searchParams.get('category');
+  const category = rawCategory && VALID_CATEGORIES.includes(rawCategory as typeof VALID_CATEGORIES[number])
+    ? rawCategory
+    : undefined;
+  const rawLimit = parseInt(searchParams.get('limit') || '5', 10);
+  const limit = Math.max(1, Math.min(MAX_QUESTION_LIMIT, isNaN(rawLimit) ? 5 : rawLimit));
   const contextParam = searchParams.get('context');
 
   try {
-    // Try Vertex Datastore first
     let questions = await searchQuestions('AI interview question', category, limit);
 
     // Fallback to seed questions if Vertex is not configured
@@ -35,9 +39,12 @@ export async function GET(request: NextRequest) {
     if (contextParam) {
       try {
         const context = JSON.parse(contextParam) as Record<string, string>;
-        questions = applyAdaptiveFiltering(questions, context);
+        if (context && typeof context === 'object') {
+          questions = applyAdaptiveFiltering(questions, context);
+        }
       } catch {
-        // Ignore invalid context
+        // Invalid JSON context — continue with unfiltered questions
+        console.warn('[Questions API] Invalid context JSON, skipping adaptive filtering');
       }
     }
 
@@ -47,41 +54,39 @@ export async function GET(request: NextRequest) {
       source: questions.length > 0 && questions[0].source === 'seed' ? 'seed' : 'datastore',
     });
   } catch (error) {
-    console.error('[Questions API] Error:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch questions' },
-      { status: 500 },
-    );
+    return apiError(safeError(error));
   }
 }
 
 /**
  * POST /api/questions/feedback
- * Record question effectiveness from user interview sessions.
  */
 export async function POST(request: NextRequest) {
+  const rateLimited = checkRateLimit(request);
+  if (rateLimited) return rateLimited;
+
   try {
     const body = await request.json();
     const { questionId, useful } = body as { questionId: string; useful: boolean };
 
-    if (!questionId) {
-      return NextResponse.json(
-        { error: 'questionId is required' },
-        { status: 400 },
-      );
+    if (!questionId || typeof questionId !== 'string') {
+      return apiError('questionId is required', 400);
     }
 
-    // In production, update effectiveness score in Vertex Datastore
+    if (typeof useful !== 'boolean') {
+      return apiError('useful (boolean) is required', 400);
+    }
+
+    // TODO: Persist feedback to DynamoDB when question feedback table is ready
+    console.log(`[Questions] Feedback for ${questionId}: ${useful ? 'useful' : 'not useful'}`);
+
     return NextResponse.json({
       success: true,
-      message: `Feedback recorded for question ${questionId}: ${useful ? 'useful' : 'not useful'}`,
+      persisted: false,
+      message: `Feedback received for question ${questionId} (persistence not yet implemented)`,
     });
   } catch (error) {
-    console.error('[Questions API] Feedback error:', error);
-    return NextResponse.json(
-      { error: 'Failed to record feedback' },
-      { status: 500 },
-    );
+    return apiError(safeError(error));
   }
 }
 
@@ -91,20 +96,18 @@ function applyAdaptiveFiltering(
   questions: StoredQuestion[],
   context: Record<string, string>,
 ): StoredQuestion[] {
-  // Sort by effectiveness score (higher is better)
   const sorted = [...questions].sort(
     (a, b) => b.effectivenessScore - a.effectivenessScore,
   );
 
-  // If user is a beginner, prioritize beginner-friendly questions
-  if (context.experience === 'none' || context.experience === 'beginner') {
+  const experience = context.experience;
+  if (experience === 'none' || experience === 'beginner') {
     return sorted.filter(
       (q) => !q.tags.includes('advanced') && !q.tags.includes('deployment'),
     );
   }
 
-  // If user is advanced, skip basic questions
-  if (context.experience === 'advanced') {
+  if (experience === 'advanced') {
     return sorted.filter(
       (q) => !q.tags.includes('basic') && !q.tags.includes('prerequisites'),
     );

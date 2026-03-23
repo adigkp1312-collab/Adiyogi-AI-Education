@@ -1,6 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 import { searchNPTEL } from "@/lib/youtube";
 import type { SupportedLanguage, ContentResource, CoursePlan } from "@/types";
+import {
+  checkRateLimit,
+  isValidLanguage,
+  isValidSkillLevel,
+  sanitizeText,
+  safeError,
+  apiError,
+  getAwsCredentials,
+  getSessionUserId,
+} from "@/lib/api-utils";
+import { profileBuilder } from "@/services/profileBuilder";
+
+const MAX_WEEKS = 12;
 
 // Demo course plan for when AWS Bedrock is not configured
 function getDemoCoursePlan(
@@ -56,38 +69,36 @@ function getDemoCoursePlan(
 }
 
 export async function POST(request: NextRequest) {
+  const rateLimited = checkRateLimit(request, 10);
+  if (rateLimited) return rateLimited;
+
   try {
     const body = await request.json();
-    const { topic, language, skillLevel, weeks } = body;
+    const { topic: rawTopic, language: rawLang, skillLevel: rawLevel, weeks: rawWeeks } = body;
 
-    if (!topic) {
-      return NextResponse.json(
-        { error: "Topic is required" },
-        { status: 400 }
-      );
+    if (!rawTopic || typeof rawTopic !== "string" || !rawTopic.trim()) {
+      return apiError("Topic is required", 400);
     }
 
-    const hasAwsCredentials =
-      process.env.MY_AWS_ACCESS_KEY_ID && process.env.MY_AWS_SECRET_ACCESS_KEY;
+    const topic = sanitizeText(rawTopic, 200);
+    const language: SupportedLanguage = isValidLanguage(rawLang) ? rawLang : "en";
+    const skillLevel = isValidSkillLevel(rawLevel) ? rawLevel : "beginner";
+    const weeks = Math.max(1, Math.min(MAX_WEEKS, Number(rawWeeks) || 4));
 
-    if (hasAwsCredentials) {
+    const credentials = getAwsCredentials();
+
+    if (credentials) {
       try {
-        // Dynamically import to avoid crashing when creds are missing
         const { generateCoursePlan } = await import("@/lib/bedrock");
         const { searchYouTube } = await import("@/lib/youtube");
 
-        const plan = await generateCoursePlan(
-          topic,
-          (language as SupportedLanguage) || "en",
-          skillLevel || "beginner",
-          weeks || 4
-        );
+        const plan = await generateCoursePlan(topic, language, skillLevel, weeks);
 
         for (const week of plan.weeks || []) {
           const resources: ContentResource[] = [];
           const searchQuery = week.topics.join(" ");
           const [youtubeResults, nptelResults] = await Promise.all([
-            searchYouTube(searchQuery, language || "en", 3).catch(() => []),
+            searchYouTube(searchQuery, language, 3).catch(() => []),
             Promise.resolve(searchNPTEL(searchQuery)),
           ]);
           resources.push(...youtubeResults);
@@ -95,27 +106,33 @@ export async function POST(request: NextRequest) {
           week.resources = resources;
         }
 
+        // Emit course_started signal (fire-and-forget)
+        const userId = await getSessionUserId(request);
+        if (userId && plan.id) {
+          profileBuilder.ingestSignal(
+            profileBuilder.createSignal(userId, 'course_started', { topic }, plan.id),
+          ).catch(() => {});
+        }
+
         return NextResponse.json(plan);
       } catch (bedrockError) {
-        console.error("Bedrock failed, falling back to demo:", bedrockError);
-        // Fall through to demo mode
+        console.error("Bedrock unavailable, falling back to demo mode:", safeError(bedrockError));
       }
     }
 
     // Demo mode
-    console.log("Using demo mode for course plan generation");
-    const demoPlan = getDemoCoursePlan(
-      topic,
-      (language as SupportedLanguage) || "en",
-      skillLevel || "beginner",
-      weeks || 4
-    );
+    const demoPlan = getDemoCoursePlan(topic, language, skillLevel, weeks);
+
+    // Emit course_started signal for demo plans too
+    const userId = await getSessionUserId(request);
+    if (userId && demoPlan.id) {
+      profileBuilder.ingestSignal(
+        profileBuilder.createSignal(userId, 'course_started', { topic }, demoPlan.id),
+      ).catch(() => {});
+    }
+
     return NextResponse.json(demoPlan);
   } catch (error) {
-    console.error("Error generating course plan:", error);
-    return NextResponse.json(
-      { error: "Failed to generate course plan" },
-      { status: 500 }
-    );
+    return apiError(safeError(error));
   }
 }

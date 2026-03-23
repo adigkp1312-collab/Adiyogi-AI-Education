@@ -1,60 +1,76 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getProgress, markResourceComplete } from "@/lib/dynamodb";
+import { checkRateLimit, isValidId, apiError, safeError, getSessionUserId } from "@/lib/api-utils";
+import { profileBuilder } from "@/services/profileBuilder";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(request: NextRequest) {
+  const rateLimited = checkRateLimit(request);
+  if (rateLimited) return rateLimited;
+
   try {
+    const userId = await getSessionUserId(request);
+    if (!userId) {
+      return apiError("Authentication required", 401);
+    }
+
     const { searchParams } = new URL(request.url);
-    const userId = searchParams.get("userId");
     const planId = searchParams.get("planId");
 
-    if (!userId || !planId) {
-      return NextResponse.json(
-        { error: "userId and planId are required" },
-        { status: 400 }
-      );
+    if (!planId) {
+      return apiError("planId is required", 400);
+    }
+
+    if (!isValidId(planId)) {
+      return apiError("Invalid planId format", 400);
     }
 
     const progress = await getProgress(userId, planId);
 
     if (!progress) {
-      return NextResponse.json(
-        { error: "Progress not found" },
-        { status: 404 }
-      );
+      return apiError("Progress not found", 404);
     }
 
     return NextResponse.json(progress);
   } catch (error) {
-    console.error("Error fetching progress:", error);
-    return NextResponse.json(
-      { error: "Failed to fetch progress" },
-      { status: 500 }
-    );
+    return apiError(safeError(error));
   }
 }
 
 export async function POST(request: NextRequest) {
-  try {
-    const body = await request.json();
-    const { userId, planId, resourceId } = body;
+  const rateLimited = checkRateLimit(request);
+  if (rateLimited) return rateLimited;
 
-    if (!userId || !planId || !resourceId) {
-      return NextResponse.json(
-        { error: "userId, planId, and resourceId are required" },
-        { status: 400 }
-      );
+  try {
+    const userId = await getSessionUserId(request);
+    if (!userId) {
+      return apiError("Authentication required", 401);
+    }
+
+    const body = await request.json();
+    const { planId, resourceId } = body;
+
+    if (!planId || !resourceId) {
+      return apiError("planId and resourceId are required", 400);
+    }
+
+    if (!isValidId(planId) || !isValidId(resourceId)) {
+      return apiError("Invalid ID format", 400);
     }
 
     await markResourceComplete(userId, planId, resourceId);
 
+    // Emit profile signal (fire-and-forget)
+    profileBuilder.ingestSignal(
+      profileBuilder.createSignal(userId, 'module_completed', {
+        resourceId,
+        completedAt: new Date().toISOString(),
+      }, planId),
+    ).catch(() => {});
+
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Error updating progress:", error);
-    return NextResponse.json(
-      { error: "Failed to update progress" },
-      { status: 500 }
-    );
+    return apiError(safeError(error));
   }
 }

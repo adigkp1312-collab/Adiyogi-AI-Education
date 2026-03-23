@@ -33,8 +33,8 @@ export function adaptCourse(
     adaptedCourse = applyAdaptation(adaptedCourse, adaptation, evaluation);
   }
 
-  // 2. Reorder upcoming modules based on performance
-  adaptedCourse = reorderByStrength(adaptedCourse, evaluation);
+  // 2. Partition modules: completed first, upcoming after
+  adaptedCourse = partitionByCompletion(adaptedCourse, evaluation);
 
   // 3. Update adaptive notes
   adaptedCourse = {
@@ -79,7 +79,7 @@ function applyAdaptation(
         }
         break;
       case 'reorder':
-        adapted.modules = reorderByStrength(adapted, evaluation).modules;
+        adapted.modules = partitionByCompletion(adapted, evaluation).modules;
         break;
     }
   }
@@ -164,10 +164,10 @@ function adjustPace(
 }
 
 /**
- * Reorder upcoming modules: put stronger topics later, weaker ones next.
- * This ensures the learner builds confidence first.
+ * Partition modules: completed modules first, upcoming modules after.
+ * Preserves original order within each group (prerequisite chain matters).
  */
-function reorderByStrength(
+function partitionByCompletion(
   course: CourseJSON,
   evaluation: EvaluationData,
 ): CourseJSON {
