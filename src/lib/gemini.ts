@@ -1,8 +1,8 @@
 /**
  * Gemini Client
  *
- * Uses the Google Generative Language API via service account auth.
- * Supports grounding via Vertex AI Search datastores.
+ * Uses GEMINI_API_KEY if set (simplest), otherwise falls back to
+ * service account JWT auth via GOOGLE_APPLICATION_CREDENTIALS.
  */
 
 import { GoogleGenAI } from '@google/genai';
@@ -11,9 +11,11 @@ import { SignJWT, importPKCS8 } from 'jose';
 
 // --- Configuration ---
 
-const GCP_PROJECT = process.env.GOOGLE_CLOUD_PROJECT || 'adiyogi-ai-education-491110';
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY || '';
 const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
 const CREDENTIALS_PATH = process.env.GOOGLE_APPLICATION_CREDENTIALS || '';
+
+const useApiKey = !!GEMINI_API_KEY;
 
 interface ServiceAccountKey {
   client_email: string;
@@ -21,7 +23,7 @@ interface ServiceAccountKey {
   token_uri: string;
 }
 
-// --- Access Token Management ---
+// --- Access Token Management (fallback when no API key) ---
 
 let cachedToken: { token: string; expiresAt: number } | null = null;
 
@@ -74,27 +76,35 @@ let clientInstance: GoogleGenAI | null = null;
 async function getClient(): Promise<GoogleGenAI> {
   if (clientInstance) return clientInstance;
 
-  const token = await getAccessToken();
-  clientInstance = new GoogleGenAI({
-    vertexai: false,
-    apiKey: '', // not used with bearer auth
-    httpOptions: {
-      headers: { Authorization: `Bearer ${token}` },
-    },
-  });
+  if (useApiKey) {
+    clientInstance = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
+  } else {
+    const token = await getAccessToken();
+    clientInstance = new GoogleGenAI({
+      vertexai: false,
+      apiKey: '',
+      httpOptions: {
+        headers: { Authorization: `Bearer ${token}` },
+      },
+    });
+  }
   return clientInstance;
 }
 
-// Refresh client when token expires
+// Refresh client when token expires (only needed for service account auth)
 async function refreshClient(): Promise<GoogleGenAI> {
-  const token = await getAccessToken();
-  clientInstance = new GoogleGenAI({
-    vertexai: false,
-    apiKey: '',
-    httpOptions: {
-      headers: { Authorization: `Bearer ${token}` },
-    },
-  });
+  if (useApiKey) {
+    clientInstance = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
+  } else {
+    const token = await getAccessToken();
+    clientInstance = new GoogleGenAI({
+      vertexai: false,
+      apiKey: '',
+      httpOptions: {
+        headers: { Authorization: `Bearer ${token}` },
+      },
+    });
+  }
   return clientInstance;
 }
 
