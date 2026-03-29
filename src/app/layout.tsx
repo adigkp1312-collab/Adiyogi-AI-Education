@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Adiyogi AI - Learn Anything For Free",
+  title: "Adiyogi AI — Free AI-Powered Education For Every Indian",
   description:
-    "A voice-first AI that organizes free education from YouTube, NPTEL, Khan Academy, and open universities for every Indian.",
+    "AI that organizes free education from YouTube, NPTEL, Khan Academy, and open universities — personalized for you, in your language.",
   keywords: [
     "free education",
     "AI learning",
@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     "voice learning",
     "Hindi education",
   ],
+  openGraph: {
+    title: "Adiyogi AI — Free AI-Powered Education For Every Indian",
+    description:
+      "AI that organizes free education from YouTube, NPTEL, Khan Academy, and open universities — personalized for you, in your language.",
+    siteName: "Adiyogi AI",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -22,7 +30,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className="mx-auto min-h-screen max-w-[1920px] scroll-smooth"
+    >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -31,14 +42,11 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body
-        className="min-h-screen bg-white antialiased"
-        style={{ fontFamily: "'Inter', sans-serif" }}
-      >
+      <body className="mx-auto flex flex-col overflow-x-clip antialiased">
         {children}
       </body>
     </html>

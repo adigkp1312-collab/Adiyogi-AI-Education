@@ -1,15 +1,17 @@
 @import "tailwindcss";
 
-/* ── Design Tokens ── */
+/* ── Design Tokens (Factory-style) ── */
 :root {
-  --primary: #1a237e;
-  --primary-light: #3949ab;
-  --accent: #ff9800;
-  --accent-light: #ffb74d;
-  --bg: #ffffff;
-  --bg-secondary: #f5f7ff;
-  --text: #1a1a2e;
-  --text-secondary: #64748b;
+  --color-foreground: #0a0a0a;
+  --color-background: #ffffff;
+  --color-accent-100: #f97316;
+  --color-accent-200: #fb923c;
+  --color-base-200: #3f3f46;
+  --color-base-500: #71717a;
+  --color-base-800: #e4e4e7;
+
+  --font-geist-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-geist-mono: "Geist Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
 }
 
 * {
@@ -17,49 +19,199 @@
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Noto Sans", "Noto Sans Devanagari", "Noto Sans Tamil", "Noto Sans Telugu",
-    "Noto Sans Bengali", sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family: var(--font-geist-sans);
+  background: var(--color-background);
+  color: var(--color-foreground);
 }
 
-/* ── Voice button pulse ── */
-@keyframes mic-pulse {
+/* ── Factory-style keyframes ── */
+@keyframes scaleIn {
+  0% { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes scaleOut {
+  0% { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.95); }
+}
+
+@keyframes enterFromRight {
+  0% { opacity: 0; transform: translateX(100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes enterFromLeft {
+  0% { opacity: 0; transform: translateX(-100px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes exitToRight {
+  0% { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(200px); }
+}
+
+@keyframes exitToLeft {
+  0% { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(-200px); }
+}
+
+@keyframes accordion-down {
+  0% { height: 0; }
+  to { height: var(--radix-accordion-content-height, auto); }
+}
+
+@keyframes accordion-up {
+  0% { height: var(--radix-accordion-content-height, auto); }
+  to { height: 0; }
+}
+
+@keyframes slidePattern {
+  0% { background-position: 0 0; }
+  to { background-position: 28.28px -28.28px; }
+}
+
+@keyframes carouselSlide {
+  to { translate: var(--destination-x) var(--destination-y); }
+}
+
+@keyframes delayedFadeIn {
+  0%, 80% { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes spin {
+  to { transform: rotate(1turn); }
+}
+
+@keyframes pulse {
+  50% { opacity: 0.5; }
+}
+
+@keyframes enter {
   0% {
-    box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.7);
+    opacity: var(--tw-enter-opacity, 1);
+    transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0)
+      scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1))
+      rotate(var(--tw-enter-rotate, 0));
   }
-  70% {
-    box-shadow: 0 0 0 20px rgba(255, 152, 0, 0);
+}
+
+@keyframes exit {
+  to {
+    opacity: var(--tw-exit-opacity, 1);
+    transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0)
+      scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1))
+      rotate(var(--tw-exit-rotate, 0));
   }
-  100% {
-    box-shadow: 0 0 0 0 rgba(255, 152, 0, 0);
-  }
+}
+
+/* ── Char reveal animation ── */
+.char-reveal {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* ── Stripe pattern on hover ── */
+.stripe-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.stripe-hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  will-change: transform;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0px,
+    transparent 8px,
+    currentColor 8px,
+    currentColor 9px
+  );
+  background-size: 28.28px 28.28px;
+  transition: opacity 100ms ease-out;
+}
+
+.stripe-hover:hover::before {
+  opacity: 0.04;
+  animation: slidePattern 2s linear infinite;
+}
+
+/* ── Nav menu animations ── */
+.nav-menu-content[data-state="open"] {
+  animation: scaleIn 0.25s;
+}
+.nav-menu-content[data-state="closed"] {
+  animation: scaleOut 0.25s;
+}
+.nav-menu-content[data-motion="from-start"] {
+  animation: enterFromLeft 0.25s;
+}
+.nav-menu-content[data-motion="from-end"] {
+  animation: enterFromRight 0.25s;
+}
+.nav-menu-content[data-motion="to-start"] {
+  animation: exitToLeft 0.25s;
+}
+.nav-menu-content[data-motion="to-end"] {
+  animation: exitToRight 0.25s;
+}
+
+/* ── Accordion ── */
+.animate-accordion-down {
+  animation: accordion-down 0.3s ease-in-out;
+}
+.animate-accordion-up {
+  animation: accordion-up 0.3s ease-in-out;
+}
+
+/* ── Link underline animation ── */
+.link-hover-underline {
+  position: relative;
+}
+.link-hover-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: currentColor;
+  transition: width 0.3s ease-in-out;
+}
+.link-hover-underline:hover::after {
+  width: 100%;
+}
+
+/* ── Disable transitions on load ── */
+.disable-transitions,
+.disable-transitions * {
+  transition: none !important;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 3px;
+}
+
+/* ── Voice button pulse (kept from original) ── */
+@keyframes mic-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(255, 152, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0); }
 }
 
 .mic-active {
   animation: mic-pulse 1.5s infinite;
-}
-
-/* ── Voice wave bars ── */
-.voice-bar {
-  width: 4px;
-  border-radius: 2px;
-  background: var(--accent);
-  transition: height 0.15s ease;
-}
-
-/* ── Gradient text ── */
-.gradient-text {
-  background: linear-gradient(
-    135deg,
-    var(--primary) 0%,
-    var(--primary-light) 50%,
-    var(--accent) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 /* ── Card hover ── */
@@ -71,52 +223,58 @@ body {
   box-shadow: 0 8px 25px rgba(26, 35, 126, 0.15);
 }
 
-/* ── Scrollbar ── */
-::-webkit-scrollbar {
-  width: 6px;
+/* ── Pipeline hero animations (kept) ── */
+@keyframes node-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.4); opacity: 1; }
 }
-::-webkit-scrollbar-track {
-  background: transparent;
+
+@keyframes pill-drift-right {
+  0% { transform: translateX(-100%); opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { transform: translateX(calc(100% + 40px)); opacity: 0; }
 }
-::-webkit-scrollbar-thumb {
-  background: #c5cae9;
-  border-radius: 3px;
+
+@keyframes pill-drift-left {
+  0% { transform: translateX(100%); opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { transform: translateX(calc(-100% - 40px)); opacity: 0; }
 }
+
+@keyframes center-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.pipeline-node-pulse {
+  animation: node-pulse 3s ease-in-out infinite;
+}
+
+.pipeline-pill-right {
+  animation: pill-drift-right 12s linear infinite;
+}
+
+.pipeline-pill-left {
+  animation: pill-drift-left 14s linear infinite;
+}
+
+/* ── Source badge colors ── */
+.badge-youtube { background: #ff0000; color: white; }
+.badge-nptel { background: #1565c0; color: white; }
+.badge-khan { background: #14bf96; color: white; }
+.badge-mit { background: #a31f34; color: white; }
+.badge-swayam { background: #ff6f00; color: white; }
 
 /* ── Loading shimmer ── */
 @keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
 .shimmer {
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
-}
-
-/* ── Source badge colors ── */
-.badge-youtube {
-  background: #ff0000;
-  color: white;
-}
-.badge-nptel {
-  background: #1565c0;
-  color: white;
-}
-.badge-khan {
-  background: #14bf96;
-  color: white;
-}
-.badge-mit {
-  background: #a31f34;
-  color: white;
-}
-.badge-swayam {
-  background: #ff6f00;
-  color: white;
 }
